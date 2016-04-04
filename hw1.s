@@ -5,8 +5,8 @@
  @ R1 = first number, R2 = operation, R3 = second number
 main:
      BL prompt
-     @BL scan
-     @BL function 
+     BL scan
+     BL function 
      
      B exit
 
