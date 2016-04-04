@@ -7,12 +7,14 @@ main:
      BL prompt
      BL scan
      BL function 
+     BL print
      
      B exit
 
  
  
 exit:
+    MOV R7, #1
     SWI 0
 
 prompt:
@@ -24,7 +26,9 @@ prompt:
 
 
 sum:
-
+    ADD R0, R1, R3
+    MOV PC, LR
+    
 difference:
 
 product:
@@ -60,4 +64,5 @@ scan:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .ascii      "Enter in order: a number, an operation, and another number."
+prompt_str:     .ascii      "Enter in order: a number, an operation, and another number.\n"
+sol_str:        .asciz      "= %d \n"
