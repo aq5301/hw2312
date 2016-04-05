@@ -41,7 +41,7 @@ function:
     BEQ product
     CMP R2, #'M'
     BEQ max
-    CMP R2, #"x"
+    CMP R2, #'x'
     BEQ exit
     MOV PC, R4
 
