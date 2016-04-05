@@ -5,11 +5,11 @@
  @ R1 = first number, R2 = operation, R3 = second number
 main:
      BL prompt
-     BL scanint
-     BL scanchar
-     BL scanint
-     BL function 
-     BL print
+     @BL scanint
+     @BL scanchar
+    @ BL scanint
+     @BL function 
+     @BL print
      B main
 
  
@@ -72,5 +72,5 @@ scanchar:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .ascii      "Enter in order: a number, an operation, and another number. x to exit"
+prompt_str:     .ascii      "Enter in order: a number, an operation, and another number. x to exit\n"
 sol_str:        .asciz      "= %d \n"
