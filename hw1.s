@@ -5,7 +5,9 @@
  @ R1 = first number, R2 = operation, R3 = second number
 main:
      BL prompt
-     BL scan
+     BL scanint
+     BL scanchar
+     BL scanint
      BL function 
      BL print
      B main
@@ -16,20 +18,24 @@ exit:
     SWI 0
 
 prompt:
-    MOV R4, LR
     MOV R7, #4
     MOV R0, #1
+    MOV R2, #69
     LDR R1, =prompt_str
     SWI 0
-    MOV PC, R4
+    MOV PC, LR
 
 sum:
     ADD R0, R1, R3
     MOV PC, LR
     
 difference:
+    SUB R0, R1, R3
+    MOV PC, LR
 
 product:
+    MUL R0, R1, R3
+    MOV PC, LR
 
 max:
 
@@ -49,9 +55,11 @@ function:
 print:
     MOV R4, LR
 
-scan:
+scanint:
     MOV R4, LR
-    
+
+scanchar:
+    MOV R4, LR
     LDR R2, =op_str
     SWI 0
     AND R2, #0xFF 
@@ -64,5 +72,5 @@ scan:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .ascii      "Enter in order: a number, an operation, and another number. x to exit\n"
+prompt_str:     .ascii      "Enter in order: a number, an operation, and another number. x to exit"
 sol_str:        .asciz      "= %d \n"
