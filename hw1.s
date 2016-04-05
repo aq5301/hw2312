@@ -6,9 +6,9 @@
 main:
      BL prompt
      @BL scanint
-      BL scanchar
-    @ BL scanint
-     @BL function 
+     BL scanchar
+     @BL scanint
+     BL function 
      @BL print
      B main
 
@@ -59,11 +59,14 @@ scanint:
     MOV R4, LR
 
 scanchar:
-    MOV R4, LR
-    LDR R2, =op_str
+    MOV R7, #3
+    MOV R0, #0
+    MOV R2, #1
+    LDR R1, =op_str
     SWI 0
+    LDR R2, [R1]
     AND R2, #0xFF 
-    MOV PC, R4
+    MOV PC, LR
 
 
  
