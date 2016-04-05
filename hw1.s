@@ -16,11 +16,12 @@ exit:
     SWI 0
 
 prompt:
+    MOV R4, LR
     MOV R7, #4
     MOV R0, #1
     LDR R1, =prompt_str
     SWI 0
-    MOV PC, LR
+    MOV PC, R4
 
 sum:
     ADD R0, R1, R3
