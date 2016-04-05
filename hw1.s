@@ -6,7 +6,7 @@
 main:
      BL prompt
      @BL scanint
-     @BL scanchar
+      BL scanchar
     @ BL scanint
      @BL function 
      @BL print
