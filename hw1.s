@@ -8,10 +8,8 @@ main:
      BL scan
      BL function 
      BL print
-     
-     B exit
+     B main
 
- 
  
 exit:
     MOV R7, #1
@@ -23,7 +21,6 @@ prompt:
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
-
 
 sum:
     ADD R0, R1, R3
@@ -44,6 +41,8 @@ function:
     BEQ product
     CMP R2, #'M'
     BEQ max
+    CMP R2, #"x"
+    BEQ exit
     MOV PC, R4
 
 print:
@@ -52,9 +51,9 @@ print:
 scan:
     MOV R4, LR
     
-    LDR R1, =op_str
+    LDR R2, =op_str
     SWI 0
-    AND R1, #0xFF 
+    AND R2, #0xFF 
     MOV PC, R4
 
 
@@ -64,5 +63,5 @@ scan:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .ascii      "Enter in order: a number, an operation, and another number.\n"
+prompt_str:     .ascii      "Enter in order: a number, an operation, and another number. x to exit\n"
 sol_str:        .asciz      "= %d \n"
