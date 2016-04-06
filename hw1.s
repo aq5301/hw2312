@@ -9,7 +9,7 @@ main:
      BL scanchar
      MOV R2, R0
      BL scanint
-     BL function 
+     @BL function 
      MOV R1, R0
      BL print
      B main
