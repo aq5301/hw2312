@@ -64,9 +64,9 @@ function:
 
 print:
     MOV R4, LR
-    LDR R0, =sol_str
+   @ LDR R0, =sol_str
     MOV R1, R1
-    BL printf
+    @BL printf
     MOV PC, R4
 
 scanint:
@@ -97,4 +97,4 @@ scanchar:
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
 prompt_str:     .ascii      "Enter in order: a number, an operation, and another number."
-sol_str:        .asciz      "=%d\n"
+@sol_str:        .asciz      "=%d\n"
