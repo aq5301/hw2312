@@ -65,7 +65,7 @@ print:
 scanint:
     MOV R4, LR              
     SUB SP, SP, #4          
-    LDR R0, =format_str     
+    LDR R0, =num_str     
     MOV R1, SP              
     BL scanf                
     LDR R0, [SP]            
