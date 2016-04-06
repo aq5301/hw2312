@@ -2,14 +2,14 @@
     .func main
  
  
- @ R1 = first number, R2 = operation, R3 = second number
 main:
      BL prompt
-     @BL scanint
+     BL scanint
+     MOV R3, R1
      BL scanchar
-     @BL scanint
+     BL scanint
      BL function 
-     @BL print
+     BL print
      B main
 
  
@@ -38,6 +38,10 @@ product:
     MOV PC, LR
 
 max:
+    MOV R0, R1
+    CMP R3, R0  
+    MOVGE R0, R3
+    MOV PC, LR
 
 function:
     CMP R2, #'+'
@@ -54,9 +58,16 @@ function:
 
 print:
     MOV R4, LR
+    LDR R0, =sol_str
+    BL printf
+    MOV PC, R4
 
 scanint:
     MOV R4, LR
+    LDR R0, =num_str
+    BL scanf
+    LDR R1, [R0]
+    MOV PC, R4
 
 scanchar:
     MOV R7, #3
