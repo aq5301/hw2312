@@ -7,6 +7,7 @@ main:
      BL scanint
      MOV R3, R0
      BL scanchar
+     MOV R2, R0
      BL scanint
      BL function 
      MOV R1, R0
@@ -60,7 +61,6 @@ function:
 print:
     MOV R4, LR
     LDR R0, =sol_str
-    MOV R1, R1
     BL printf
     MOV PC, R4
 
@@ -80,8 +80,8 @@ scanchar:
     MOV R2, #1
     LDR R1, =op_str
     SWI 0
-    LDR R2, [R1]
-    AND R2, #0xFF 
+    LDR R0, [R1]
+    AND R0, #0xFF 
     MOV PC, LR
 
 
