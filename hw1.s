@@ -97,4 +97,4 @@ scanchar:
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
 prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
-sol_str:        .asciz      "=%d\n"
+sol_str:        .asciz      "%d\n"
