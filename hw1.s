@@ -12,7 +12,7 @@ main:
      MOV R1, R0
      BL function 
      MOV R1, R0
-     @BL print
+     BL print
      B exit
 
  
@@ -96,5 +96,5 @@ scanchar:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
-sol_str:        .asciz      "= %d \n"
+prompt_str:     .ascii      "Enter in order: a number, an operation, and another number."
+sol_str:        .asciz      "=%d\n"
