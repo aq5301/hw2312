@@ -45,17 +45,18 @@ product:
 
 max:
     MOV R5, LR
+    MOV R0, R1
+    CMP R3, R0  
+    MOVGE R0, R3
+    MOV PC, R5
     
 function:
+    MOV R4, LR
     CMP R2, #'+'
     BEQ sum
     CMP R2, #'-'
     BEQ difference
     CMP R2, #'*'
-    MOV R0, R1
-    CMP R3, R0  
-    MOVGE R0, R3
-    MOV PC, R5
     BEQ product
     CMP R2, #'M'
     BEQ max
