@@ -3,14 +3,14 @@
  
  
 main:
-    @ BL prompt
+     BL prompt
      BL scanint
      MOV R3, R0
      BL scanchar
      MOV R2, R0
      BL scanint
      MOV R1, R0
-     BL function 
+     @BL function 
      MOV R1, R0
      BL print
      B exit
@@ -24,7 +24,7 @@ prompt:
     MOV R7, #4
     MOV R0, #1
     MOV R2, #69
-    @LDR R1, =prompt_str
+    LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
 
@@ -45,17 +45,18 @@ product:
 
 max:
     MOV R5, LR
-    MOV R0, R1
-    CMP R3, R0  
-    MOVGE R0, R3
-    MOV PC, R5
-
+    
 function:
     CMP R2, #'+'
     BEQ sum
     CMP R2, #'-'
     BEQ difference
     CMP R2, #'*'
+    MOV R0, R1
+    CMP R3, R0  
+    MOVGE R0, R3
+    MOV PC, R5
+
     BEQ product
     CMP R2, #'M'
     BEQ max
@@ -65,7 +66,6 @@ function:
 print:
     MOV R4, LR
     LDR R0, =sol_str
-    MOV R1, R1
     BL printf
     MOV PC, R4
 
@@ -96,5 +96,5 @@ scanchar:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-@prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
+prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
 sol_str:        .asciz      "=%d\n"
