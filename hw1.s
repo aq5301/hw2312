@@ -9,7 +9,7 @@ main:
      BL scanchar
      MOV R3, R0
      BL scanint
-     @MOV R1, R0
+     MOV R1, R0
      BL function 
      MOV R1, R0
      BL print
@@ -23,7 +23,7 @@ exit:
 prompt:
     MOV R7, #4
     MOV R0, #1
-    MOV R2, #69
+    MOV R2, #59
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
