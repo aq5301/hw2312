@@ -9,6 +9,7 @@ main:
      BL scanchar
      MOV R2, R0
      BL scanint
+     MOV R1, R0
      BL function 
      MOV R1, R0
      BL print
@@ -91,5 +92,5 @@ scanchar:
  .data
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
-prompt_str:     .asciz      "Enter in order: a number, an operation, and another number. x on operation to exit\n"
+prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
 sol_str:        .asciz      "= %d \n"
