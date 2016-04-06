@@ -10,7 +10,7 @@ main:
      MOV R2, R0
      BL scanint
      MOV R1, R0
-     @BL function 
+     BL function 
      MOV R1, R0
      BL print
      B exit
@@ -56,7 +56,6 @@ function:
     CMP R3, R0  
     MOVGE R0, R3
     MOV PC, R5
-
     BEQ product
     CMP R2, #'M'
     BEQ max
