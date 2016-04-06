@@ -12,7 +12,7 @@ main:
      MOV R1, R0
      BL function 
      MOV R1, R0
-     BL print
+     @BL print
      B main
 
  
