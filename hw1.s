@@ -17,8 +17,14 @@ main:
 
  
 exit:
-    MOV R7, #1
-    SWI 0
+    MOV R7, #4              @ write syscall, 4
+    MOV R0, #1              @ output stream to monitor, 1
+    MOV R2, #5             @ print string length
+    LDR R1, =wrong_str     @ string at label prompt_str:
+    SWI 0                   @ execute syscall
+    MOV PC, LR 
+    @MOV R7, #1
+    @SWI 0
 
 prompt:
     MOV R7, #4
@@ -60,7 +66,7 @@ function:
     BEQ product
     CMP R2, #'M'
     BEQ max
-   @ BNE exit
+    BNE exit
     MOV PC, R4
 
 print:
@@ -98,3 +104,4 @@ num_str:        .asciz      "%d"
 op_str:         .ascii      " "
 prompt_str:     .asciz      "Enter in order: a number, an operation, and another number.\n"
 sol_str:        .asciz      "%d\n"
+wrong_str:      .ascii      "wrong"
