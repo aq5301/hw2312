@@ -63,11 +63,14 @@ print:
     MOV PC, R4
 
 scanint:
-    MOV R4, LR
-    LDR R0, =num_str
-    BL scanf
-    LDR R0, [R1]
-    MOV PC, R4
+    MOV R4, LR              
+    SUB SP, SP, #4          
+    LDR R0, =format_str     
+    MOV R1, SP              
+    BL scanf                
+    LDR R0, [SP]            
+    ADD SP, SP, #4          
+    MOV PC, R4   
 
 scanchar:
     MOV R7, #3
