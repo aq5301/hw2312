@@ -5,7 +5,7 @@
 main:
      BL prompt
      BL scanint
-     MOV R3, R1
+     MOV R3, R0
      BL scanchar
      BL scanint
      BL function 
@@ -66,7 +66,7 @@ scanint:
     MOV R4, LR
     LDR R0, =num_str
     BL scanf
-    LDR R1, [R0]
+    LDR R0, [R1]
     MOV PC, R4
 
 scanchar:
