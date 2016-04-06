@@ -60,6 +60,7 @@ function:
 print:
     MOV R4, LR
     LDR R0, =sol_str
+    MOV R1, R1
     BL printf
     MOV PC, R4
 
