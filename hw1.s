@@ -11,14 +11,10 @@ main:
      BL scanint
      MOV R1, R0
      BL function 
-     MOV R1, R0
+     MOV R1, R2
      BL print
-     B main
+     B exit
 
- 
-exit:
-    MOV R7, #1
-    SWI 0
 
 prompt:
     MOV R7, #4
