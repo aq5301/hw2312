@@ -6,12 +6,15 @@ main:
      BL prompt
      BL scanint
      MOV R2, R0
+      BL print
      BL scanchar
      MOV R6, R0
+      BL print
      BL scanint
      MOV R1, R0
+      BL print
      BL function 
-     MOV R1, R2
+     MOV R1, R0
      BL print
      B exit
 
