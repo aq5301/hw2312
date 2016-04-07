@@ -23,7 +23,7 @@ exit:
 prompt:
     MOV R7, #4
     MOV R0, #1
-    MOV R2, #59
+    MOV R2, #61
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
