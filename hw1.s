@@ -28,8 +28,6 @@ prompt:
 sum:
     MOV R5, LR
     ADD R0, R9, R8
-     MOV R1, R8
-    BL print
     MOV PC, R5
     
 difference:
