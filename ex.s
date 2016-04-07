@@ -2,7 +2,6 @@
 scan0:  .string "%d"
 .text
 addr_scan:      .word   scan0
-...
 
 
 scan:
