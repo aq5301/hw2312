@@ -78,7 +78,7 @@ scanint:
 scanchar:
     MOV R7, #3
     MOV R0, #0
-    MOV R8, #1
+    MOV R2, #1
     LDR R1, =op_str
     SWI 0
     LDR R0, [R1]
