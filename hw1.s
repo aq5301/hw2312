@@ -5,10 +5,12 @@
 main:
      BL prompt
      BL scanint
-     MOV R1, R0
+     MOV R2, R0
+     MOV R1, R2
       BL print
      BL scanchar
-     MOV R1, R0
+     MOV R3, R0
+     MOV R1, R3
       BL print
      BL scanint
      MOV R1, R0
