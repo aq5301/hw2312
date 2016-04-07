@@ -32,19 +32,19 @@ sum:
     
 difference:
     MOV R5, LR
-    SUB R0, R1, R2
+    SUB R0, R8, R9
     MOV PC, R5
 
 product:
     MOV R5, LR
-    MUL R0, R1, R2
+    MUL R0, R8, R9
     MOV PC, R5
 
 max:
     MOV R5, LR
-    MOV R0, R1
-    CMP R2, R0  
-    MOVGE R0, R2
+    MOV R0, R9
+    CMP R8, R0  
+    MOVGE R0, R8
     MOV PC, R5
     
 function:
