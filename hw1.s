@@ -11,8 +11,6 @@ main:
      BL scanint
      MOV R9, R0
      MOV R2, R8
-          MOV R1, R9
-    BL print
      BL function 
      MOV R1, R0
      BL print
@@ -30,7 +28,8 @@ prompt:
 sum:
     MOV R5, LR
     ADD R0, R9, R2
-
+     MOV R1, R2
+    BL print
     MOV PC, R5
     
 difference:
