@@ -10,7 +10,7 @@ main:
     BL print
      BL scanchar
      MOV R6, R0
-          MOV R1, R8
+
     BL print
      BL scanint
      MOV R1, R0
