@@ -28,7 +28,7 @@ prompt:
 sum:
     MOV R5, LR
     ADD R0, R1, R2
-    MOV R1, R0
+    MOV R1, R2
     BL print
     MOV PC, R5
     
