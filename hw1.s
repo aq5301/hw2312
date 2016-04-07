@@ -10,11 +10,10 @@ main:
      MOV R6, R0
      BL scanint
      MOV R9, R0
-     @MOV R2, R8
      BL function 
      MOV R1, R0
      BL print
-     B exit
+     B main
 
 
 prompt:
