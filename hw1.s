@@ -9,9 +9,7 @@ main:
      BL scanchar
      MOV R6, R0
      BL scanint
-     MOV R1, R0
-
-    BL print
+     MOV R9, R0
      MOV R2, R8
      BL function 
      MOV R1, R0
@@ -29,9 +27,8 @@ prompt:
 
 sum:
     MOV R5, LR
-    ADD R0, R1, R2
+    ADD R0, R9, R2
 
-    BL print
     MOV PC, R5
     
 difference:
