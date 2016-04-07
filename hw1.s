@@ -5,11 +5,11 @@
 main:
      BL prompt
      BL scanint
-     MOV R7, R0
+     MOV R2, R0
      BL scanchar
-     MOV R6, R0
+     MOV R3, R0
      BL scanint
-     MOV R8, R0
+     MOV R1, R0
      BL function 
      MOV R1, R0
      BL print
@@ -26,35 +26,35 @@ prompt:
 
 sum:
     MOV R5, LR
-    ADD R0, R8, R7
+    ADD R0, R1, R2
     MOV PC, R5
     
 difference:
     MOV R5, LR
-    SUB R0, R8, R7
+    SUB R0, R1, R2
     MOV PC, R5
 
 product:
     MOV R5, LR
-    MUL R0, R8, R7
+    MUL R0, R1, R2
     MOV PC, R5
 
 max:
     MOV R5, LR
     MOV R0, R8
-    CMP R7, R0  
-    MOVGE R0, R7
+    CMP R2, R0  
+    MOVGE R0, R2
     MOV PC, R5
     
 function:
     MOV R4, LR
-    CMP R6, #'+'
+    CMP R3, #'+'
     BEQ sum
-    CMP R6, #'-'
+    CMP R3, #'-'
     BEQ difference
-    CMP R6, #'*'
+    CMP R3, #'*'
     BEQ product
-    CMP R6, #'M'
+    CMP R3, #'M'
     BEQ max
     MOV PC, R4
 
