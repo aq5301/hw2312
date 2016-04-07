@@ -1,46 +1,44 @@
-scantype:       .asciz "%d"
-hours:          .word 0
-payrate:        .word 0
+.data 
+scan0:  .string "%d"
 .text
-addr_prompt1:   .word prompt1
-addr_prompt2:   .word prompt2
-addr_scantype:  .word scantype
-addr_hours:     .word hours
-addr_payrate:   .word payrate
-
-.global main
-main:
-push {LR}
-sub sp, sp, #8
-
-ldr r0, addr_prompt1    /*First param of printf */
-bl printf               /*call printf */
-
-ldr r0, addr_scantype   /* First param of scanf*/
-mov r1, sp
-bl scanf
-
-ldr r4, [sp]
-ldr r0, addr_prompt2
-bl printf
-
-ldr r0, addr_scantype
-mov r1, sp
-bl scanf
-
-ldr r5, [sp]
-ldr r0,=string
-mov r1, r4
-mov r2, r5
-bl printf
-
-add sp, sp, #8
-pop {PC}
+addr_scan:      .word   scan0
 ...
 
-root@scw-cb8d4b:~/asm# ./jf
-Enter pay rate - round up to nearest dollar.
-100
-Enter hours.
-40
-Pay Rate: 100 Hours: 40
+
+scan:
+push {r0-r3,lr}
+sub sp,sp, #4
+
+ldr r0, addr_scan
+mov r1, sp
+bl scanf
+ldr r9, [sp]            // store Ai
+
+ldr r0, addr_scan
+mov r1, sp
+bl scanf
+ldr r10, [sp]           // store Bi
+
+ldr r0, addr_scan
+mov r1, sp
+bl scanf
+ldr r11, [sp]           // store Ci
+
+ldr r0, addr_scan
+mov r1, sp
+bl scanf
+ldr r12, [sp]           // store Di
+
+add sp, sp, #4
+
+
+write:
+push {r0-r3,lr}
+ldr r0,=fmt3
+mov r1, r9
+mov r2, r10
+mov r3, r11
+push {r12}
+bl printf
+pop {r12}
+pop {r0-r3,pc}
