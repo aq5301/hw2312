@@ -45,7 +45,7 @@ product:
 
 max:
     MOV R5, LR
-    MOV R0, R8
+    MOV R0, R1
     CMP R2, R0  
     MOVGE R0, R2
     BL print
