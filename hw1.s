@@ -7,7 +7,7 @@ main:
      BL scanint
      MOV R2, R0
      BL scanchar
-     MOV R3, R0
+     MOV R6, R0
      BL scanint
      MOV R1, R0
      BL function 
@@ -48,13 +48,13 @@ max:
     
 function:
     MOV R4, LR
-    CMP R3, #'+'
+    CMP R6, #'+'
     BEQ sum
-    CMP R3, #'-'
+    CMP R6, #'-'
     BEQ difference
-    CMP R3, #'*'
+    CMP R6, #'*'
     BEQ product
-    CMP R3, #'M'
+    CMP R6, #'M'
     BEQ max
     MOV PC, R4
 
