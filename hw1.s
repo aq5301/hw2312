@@ -23,7 +23,7 @@ exit:
 prompt:
     MOV R7, #4
     MOV R0, #1
-    MOV R2, #61
+    MOV R2, #60
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
@@ -96,4 +96,4 @@ scanchar:
 num_str:        .asciz      "%d"
 op_str:         .ascii      " "
 prompt_str:     .ascii      "Enter in order: a number, an operation, and another number.\n"
-sol_str:        .asciz      "%d\n"
+sol_str:        .asciz      "=%d\n"
