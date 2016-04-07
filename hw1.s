@@ -11,6 +11,8 @@ main:
      BL scanint
      MOV R9, R0
      MOV R2, R8
+          MOV R1, R9
+    BL print
      BL function 
      MOV R1, R0
      BL print
