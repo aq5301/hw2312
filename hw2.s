@@ -73,6 +73,6 @@ count_partitions:
 
 
 .data
-scan_str        .asciz  "%d"
-prompt_str      .asciz  "Enter 2 integers:\n"
-print_str       .asciz  "There are %d partitions of %d using integers up to %d.\n"
+scan_str:        .asciz  "%d"
+prompt_str:      .asciz  "Enter 2 integers:\n"
+print_str:       .asciz  "There are %d partitions of %d using integers up to %d.\n"
