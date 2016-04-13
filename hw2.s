@@ -64,7 +64,7 @@ count_partitions:
     SUB R1, R0, #1
     BL count_partitions
     SUB R1, R2, R0
-    BL prompt
+    @BL prompt
     BL count_partitions
     POP {R1}
     POP {R2}
