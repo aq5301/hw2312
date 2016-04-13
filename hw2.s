@@ -4,9 +4,9 @@
 main:
      BL prompt
      BL scan
-     MOV R5, R0
+     MOV R5, R0 @ this is n
      BL scan
-     MOV R6, R0
+     MOV R6, R0 @ this is m
      MOV R1, R5
      MOV R2, R6
      BL count_partitions
@@ -24,7 +24,7 @@ exit:
 prompt:
     MOV R7, #4
     MOV R0, #1
-    MOV R2, #17
+    MOV R2, #19
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
@@ -59,8 +59,8 @@ count_partitions:
     
     PUSH {R1}
     PUSH {R2}
-    MOV R0, R2
-    MOV R2, R1
+    MOV R0, R2 @ move m
+    MOV R2, R1 @ move n
     SUB R1, R0, #1
     BL count_partitions
     SUB R1, R2, R0
