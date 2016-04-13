@@ -52,7 +52,7 @@ count_partitions:
     POPEQ {PC}
     CMP R1, #0
     MOVLT R0, #0
-    POPEQ {PC}
+    POPLT {PC}
     CMP R2, #0
     MOVEQ R0, #0
     POPEQ {PC}
