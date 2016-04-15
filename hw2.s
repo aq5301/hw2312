@@ -61,7 +61,6 @@ count_partitions:
     PUSH {R1}
     PUSH {R2}
     SUB R1, R0, #1
-     BL prompt
     BL count_partitions
     POP {R2}
     SUB R1, R2, R0
