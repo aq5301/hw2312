@@ -11,7 +11,7 @@ main:
      MOV R2, R6
      MOV R9, #0
      BL count_partitions
-     MOV R1, R0
+     MOV R1, R9
      MOV R2, R5
      MOV R3, R6
      BL print
