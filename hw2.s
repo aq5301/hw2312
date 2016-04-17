@@ -60,7 +60,7 @@ count_partitions:
     
     PUSH {R1}
     PUSH {R2}
-    SUB R1, R0, #1
+    SUB R1, R2, #1
     BL count_partitions
     POP {R2}
     SUB R1, R1, R2
