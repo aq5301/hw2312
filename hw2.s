@@ -11,7 +11,7 @@ main:
      MOV R2, R6
      MOV R9, #0
      BL count_partitions
-     MOV R1, R0
+     MOV R1, R9
      MOV R2, R5
      MOV R3, R6
      BL print
@@ -66,9 +66,10 @@ count_partitions:
     SUB R1, R2, R0
     BL prompt
     BL count_partitions
+    BL prompt
     POP {R1}
-    @ADD R9, R9, R0
-    @MOV R0, #0
+    ADD R9, R9, R0
+    MOV R0, #0
     POP  {PC}
 
 
