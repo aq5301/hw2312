@@ -58,6 +58,7 @@ count_partitions:
     MOVEQ R0, #0
     POPEQ {PC}
     
+    BL prompt
     PUSH {R1}
     PUSH {R2}
     SUB R1, R0, #1
