@@ -16,7 +16,7 @@ main:
      MOV R3, R6
      BL print
      
-     B exit     @ change to loop at end
+     B main
 
 exit:
     MOV R7, #1          
