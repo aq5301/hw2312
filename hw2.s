@@ -18,10 +18,6 @@ main:
      
      B main
 
-exit:
-    MOV R7, #1          
-	SWI 0   
-
 prompt:
     MOV R7, #4
     MOV R0, #1
