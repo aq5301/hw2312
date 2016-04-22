@@ -9,6 +9,7 @@ main:
      VLDR S0, [R0] 
      BL scanchar
      MOV R6, R0
+     BL prompt
      BL scanfloat
      VLDR S1, [R0] 
      
@@ -26,7 +27,7 @@ exit:
 prompt:
     MOV R7, #4
     MOV R0, #1
-    MOV R2, #60
+    MOV R2, #58
     LDR R1, =prompt_str
     SWI 0
     MOV PC, LR
