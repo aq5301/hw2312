@@ -48,7 +48,7 @@ product:
 max:
     MOV R5, LR
     VMOV S2, S1
-    VCMP S0, S2
+    VCMP.F32 S0, S2
     VMOVGE S2, S0
     MOV PC, R5
     
@@ -70,7 +70,7 @@ print:
     BL printf
     MOV PC, R4
 
-scanfloat
+scanfloat:
     MOV R4, LR              
     SUB SP, SP, #4          
     LDR R0, =num_str     
