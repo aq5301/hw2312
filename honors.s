@@ -87,10 +87,11 @@ scanchar:
     MOV R0, #0
     MOV R2, #1
     LDR R1, =op_str
+        BL prompt
     SWI 0
     LDR R0, [R1]
     AND R0, #0xFF 
-    BL prompt
+
     MOV PC, LR
 
 
