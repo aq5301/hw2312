@@ -8,8 +8,8 @@ main:
      BL scanfloat
      VLDR S0, [R0] 
      
-     BL scanchar
-     MOV R6, R0
+    @ BL scanchar
+    @ MOV R6, R0
 
      BL scanfloat
      VLDR S1, [R0] 
@@ -83,7 +83,6 @@ scanfloat:
     MOV PC, R4   
 
 scanchar:
-        BL prompt
     MOV R7, #3
     MOV R0, #0
     MOV R2, #1
