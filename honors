@@ -33,12 +33,12 @@ prompt:
 
 sum:
     MOV R5, LR
-    ADD R0, R9, R8
+    VADD.F32 S2, S0, S1
     MOV PC, R5
     
 difference:
     MOV R5, LR
-    SUB R0, R8, R9
+    VSUB.F32 S2, S0, S1
     MOV PC, R5
 
 product:
@@ -47,9 +47,9 @@ product:
     MOV PC, R5
 max:
     MOV R5, LR
-    MOV R0, R9
-    CMP R8, R0  
-    MOVGE R0, R8
+    VMOV S2, S1
+    VCMP S0, S2
+    VMOVGE S2, S0
     MOV PC, R5
     
 function:
@@ -89,12 +89,6 @@ scanchar:
     LDR R0, [R1]
     AND R0, #0xFF 
     MOV PC, LR
-
-
-
-
-
-
 
 
 
