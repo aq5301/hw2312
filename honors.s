@@ -5,6 +5,7 @@
 main:
      BL prompt
      BL scanfloat
+     VLDR S0, [R0]
 
      @BL scanchar
      @MOV R6, R0
@@ -75,7 +76,7 @@ scanfloat:
     MOV R4, LR              
     LDR R0, =num_str     
     BL scanf                
-    VLDR S0, [R0]            
+    @LDR R0, [R0]            
     MOV PC, R4   
 
 scanchar:
