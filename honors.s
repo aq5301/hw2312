@@ -16,7 +16,7 @@ main:
      
     @ BL function 
      @VADD.F32 S2, S0, S1
-     
+     BL prompt
      VCVT.F64.F32 D4, S0 
      VMOV R1, R2, D4
      BL print
