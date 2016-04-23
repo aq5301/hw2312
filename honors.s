@@ -6,18 +6,18 @@ main:
      BL prompt
      BL scanfloat
 
-     VLDR S0, [R0] 
+
      
      BL scanchar
      MOV R6, R0
 
-     BL scanfloat
-     VLDR S1, [R0] 
+     @BL scanfloat
+     @VLDR S1, [R0] 
      
     @ BL function 
-     VADD.F32 S2, S0, S1
+     @VADD.F32 S2, S0, S1
      
-     VCVT.F64.F32 D4, S2 
+     VCVT.F64.F32 D4, S0 
      VMOV R1, R2, D4
      BL print
      B exit
@@ -77,7 +77,7 @@ scanfloat:
     MOV R4, LR              
     LDR R0, =num_str     
     BL scanf                
-    LDR R0, [SP]            
+    VLDR S0, [R0]            
     MOV PC, R4   
 
 scanchar:
