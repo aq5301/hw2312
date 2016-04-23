@@ -14,9 +14,9 @@ main:
      BL scanfloat
      VLDR S1, [R0] 
      
-     BL function 
+    @ BL function 
      
-     VCVT.F64.F32 D4, S2 
+     VCVT.F64.F32 D4, S1 
      VMOV R1, R2, D4
      BL print
      B exit
