@@ -76,7 +76,7 @@ scanfloat:
     MOV R4, LR              
     LDR R0, =num_str     
     BL scanf                
-    @LDR R0, [R0]            
+    LDR R0, [SP]            
     MOV PC, R4   
 
 scanchar:
