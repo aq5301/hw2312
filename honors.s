@@ -4,9 +4,8 @@
  
 main:
      BL prompt
-     
      BL scanfloat
-     BL prompt
+
      VLDR S0, [R0] 
      
      BL scanchar
@@ -75,12 +74,12 @@ print:
 
 scanfloat:
     MOV R4, LR              
-    SUB SP, SP, #4          
+    @SUB SP, SP, #4          
     LDR R0, =num_str     
-    MOV R1, SP              
+    @MOV R1, SP              
     BL scanf                
     LDR R0, [SP]            
-    ADD SP, SP, #4          
+    @ADD SP, SP, #4          
     MOV PC, R4   
 
 scanchar:
