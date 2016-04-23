@@ -6,8 +6,9 @@ main:
      BL prompt
      
      BL scanfloat
+     BL prompt
      VLDR S0, [R0] 
-      BL prompt
+     
      BL scanchar
      MOV R6, R0
 
@@ -87,7 +88,6 @@ scanchar:
     MOV R0, #0
     MOV R2, #1
     LDR R1, =op_str
-
     SWI 0
     LDR R0, [R1]
     AND R0, #0xFF 
