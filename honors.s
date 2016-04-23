@@ -15,8 +15,9 @@ main:
      VLDR S1, [R0] 
      
     @ BL function 
+     VADD.F32 S2, S0, S1
      
-     VCVT.F64.F32 D4, S1 
+     VCVT.F64.F32 D4, S2 
      VMOV R1, R2, D4
      BL print
      B exit
