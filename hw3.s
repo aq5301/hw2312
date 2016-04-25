@@ -5,13 +5,11 @@
    
 main:
     BL prompt
-    BL scanint
-    MOV R5, R0	
-    
-    
-    
-    BL print
-    B   exit           
+    BL scanint 
+    MOV R5, R0
+    MOV R0, #0
+    B generate	
+
    
 exit:   
     MOV R7, #1         
@@ -31,6 +29,15 @@ print:
 
 
 generate:
+    CMP R0, #20
+    BEQ sort_ascending
+    LDR R1, =a
+    
+    
+
+
+
+    B sort_ascending
 
 
 sort_ascending:
@@ -50,4 +57,10 @@ scanint:
 
 
 .data
+
+
+.balign 4
+a:              .skip       400
+b:              .skip       800
+printf_str:     .asciz      "a[%d] = %d\n"
 prompt_str:     .ascii      "Enter an integer.\n"
