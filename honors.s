@@ -79,17 +79,17 @@ function:
     MOV PC, R4
 
 print:
-    MOV R4, LR
+    PUSH {LR}
     LDR R0, =sol_str
     BL printf
-    MOV PC, R4
+    POP {PC}
 
 scanfloat:
-    PUSH {LR}             
+    MOV R4, LR            
     LDR R0, =num_str     
     BL scanf                
     LDR R0, [SP]            
-    POP {LR}
+    MOV PC, R4
 
 scanchar:
     MOV R7, #3
