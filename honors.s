@@ -12,7 +12,7 @@ main:
 
 
   VMUL.F32 S2, S0, S1
-     BL prompt
+     @BL prompt
      @BL scanfloat
      @VLDR S0, [R0]
      
