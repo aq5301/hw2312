@@ -4,23 +4,23 @@
  
 main:
 
-     LDR R0, =val1
-     VLDR S0, [R0]
+     @LDR R0, =val1
+     @VLDR S0, [R0]
      
-     LDR R0, =val2
-     VLDR S1, [R0]
+     @LDR R0, =val2
+     @VLDR S1, [R0]
 
 
      BL prompt
-     @BL scanfloat
-     @VLDR S0, [R0]
+     BL scanfloat
+     VLDR S0, [R0]
      
 
      BL scanchar
      MOV R6, R0
 
-     @BL scanfloat
-     @VLDR S1, [R0] 
+     BL scanfloat
+     VLDR S1, [R0] 
      
     
      BL function 
