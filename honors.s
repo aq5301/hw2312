@@ -83,11 +83,11 @@ print:
     POP {PC}
 
 scanfloat:
-    MOV R4, LR            
+    PUSH {LR}          
     LDR R0, =num_str     
     BL scanf                
     LDR R0, [SP]            
-    MOV PC, R4
+    POP {PC}
 
 scanchar:
     MOV R7, #3
