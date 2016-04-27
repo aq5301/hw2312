@@ -13,8 +13,8 @@ main:
      LDR R0, =val2
      VLDR S1, [R0]
 
-     BL scanchar
-     MOV R6, R0
+     @BL scanchar
+     @MOV R6, R0
 
      @BL scanfloat
      @VLDR S1, [R0] 
