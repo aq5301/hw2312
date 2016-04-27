@@ -87,7 +87,7 @@ scanfloat:
     LDR R0, =num_str 
     MOV R1, =float_val
     BL scanf                
-    LDR R0, [=float_val]            
+    LDR R0, [float_val]            
     POP {PC}
 
 scanchar:
@@ -111,4 +111,4 @@ prompt_str:     .ascii      "Enter in order: a float, an operation, and another 
 sol_str:        .asciz      "= %f \n"
 val1:           .float      3.14159
 val2:           .float      0.100
-float_val:      .asciz      "%f"
+float_val:      .float      0.00000
