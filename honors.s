@@ -105,10 +105,10 @@ scanchar:
 
  .data
 
-num_str:        .ascii      "%f"
+num_str:        .asciz      "%f"
 op_str:         .ascii      " "
 prompt_str:     .ascii      "Enter in order: a float, an operation, and another float.\n"
 sol_str:        .asciz      "= %f \n"
 val1:           .float      3.14159
 val2:           .float      0.100
-float_val:      .asciz      "%f"
+float_val:      .float      0.0000
