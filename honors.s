@@ -85,9 +85,9 @@ print:
 scanfloat:
     PUSH {LR}          
     LDR R0, =num_str 
-    LDR R1, =float_val
+    LDR R3, =float_val
     BL scanf                
-    LDR R0, [R1]            
+    LDR R0, [R3]            
     POP {PC}
 
 scanchar:
