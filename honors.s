@@ -4,19 +4,25 @@
  
 main:
      BL prompt
-     BL scanfloat
+     @BL scanfloat
+     @VLDR S0, [R0]
+     
+     LDR R0, =val1
      VLDR S0, [R0]
+     
+     LDR R0, =val2
+     VLDR S1, [R0]
 
-     @BL scanchar
-     @MOV R6, R0
+     BL scanchar
+     MOV R6, R0
 
      @BL scanfloat
      @VLDR S1, [R0] 
      
-    @ BL function 
-     @VADD.F32 S2, S0, S1
+     BL function 
 
-     VCVT.F64.F32 D4, S0 
+
+     VCVT.F64.F32 D4, S2 
      VMOV R1, R2, D4
      BL print
      B exit
@@ -98,3 +104,5 @@ num_str:        .ascii      "%f"
 op_str:         .ascii      " "
 prompt_str:     .ascii      "Enter in order: a float, an operation, and another float.\n"
 sol_str:        .asciz      "= %f \n"
+val1:           .float      1.02
+val2:           .float      2.01
