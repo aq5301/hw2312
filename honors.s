@@ -11,21 +11,19 @@ main:
      VLDR S1, [R0]
 
 
-  VMUL.F32 S2, S0, S1
-     @BL prompt
+     BL prompt
      @BL scanfloat
      @VLDR S0, [R0]
      
 
-
-     @BL scanchar
-     @MOV R6, R0
+     BL scanchar
+     MOV R6, R0
 
      @BL scanfloat
      @VLDR S1, [R0] 
      
     
-     @BL function 
+     BL function 
 
   
      VCVT.F64.F32 D4, S2 
