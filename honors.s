@@ -111,4 +111,4 @@ prompt_str:     .ascii      "Enter in order: a float, an operation, and another 
 sol_str:        .asciz      "= %f \n"
 val1:           .float      3.14159
 val2:           .float      0.100
-float_val:      .float      0.00000
+float_val:      .asciz      "%f"
