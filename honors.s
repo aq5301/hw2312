@@ -10,6 +10,8 @@ main:
      LDR R0, =val2
      VLDR S1, [R0]
 
+
+  VMUL.F32 S2, S0, S1
      BL prompt
      @BL scanfloat
      @VLDR S0, [R0]
@@ -25,7 +27,6 @@ main:
     
      @BL function 
 
-  VMUL.F32 S2, S0, S1
   
      VCVT.F64.F32 D4, S2 
      VMOV R1, R2, D4
