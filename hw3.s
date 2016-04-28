@@ -48,7 +48,7 @@ generate:
     
     ADD R3, R5, R0
     ADD R4, R3, #1
-    MUL R3, R4, #-1
+    NEG R3, R4
     STR R3, [R2, +#1]
     
     ADD R0, R0, #2
